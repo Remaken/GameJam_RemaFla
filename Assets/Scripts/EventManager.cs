@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
    public static event Action OnRevive;
    //todo: events
    //todo: Tableau de réactivation fleur -> avec eau
+   //todo: Detection joueur??
 
 
    private void Update()

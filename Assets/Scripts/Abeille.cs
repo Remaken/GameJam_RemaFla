@@ -20,12 +20,16 @@ public class Abeille : Enemi
     private void Update()
     {
         PlayerDetector();
-        MouvementAbeille(mouvement);
+        MouvementAbeille(_mouvement);
         if (_playerfollow)
         {
             abeille.SetDestination(playerTransform.position);
         }
         EnemyDies();
+        if (_isDead==true)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
