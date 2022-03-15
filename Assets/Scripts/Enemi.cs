@@ -5,4 +5,6 @@ using UnityEngine;
 public class Enemi : MonoBehaviour
 {
     private int _hitPoints = 10;
+    
+    //Todo: raycast detecte joueur
 }

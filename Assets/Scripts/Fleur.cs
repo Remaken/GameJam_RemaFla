@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Fleur : Enemi
 {
-   //todo: Raycast
+   //todo: bouger vers raycast
 }
