@@ -20,6 +20,7 @@ public class Enemi : MonoBehaviour
     private void Start()
     {
         _abeilleHP = _hitPoints;
+        EventManager.OnDeath += Revive;
     }
 
     protected void PlayerDetector()

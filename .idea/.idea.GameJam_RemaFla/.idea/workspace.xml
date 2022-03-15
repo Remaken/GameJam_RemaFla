@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4db73ba7-6a5a-41e6-8a61-3a74c9c9c1f5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam_RemaFla/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam_RemaFla/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/EnemiStatique.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/EnemiStatique.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/EnemiSuicide.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/EnemiSuicide.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Joueur.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Joueur.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Abeilles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Abeilles.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fleurs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fleurs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abeille.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abeille.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemi.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +72,7 @@
       <workItem from="1647347954355" duration="1117000" />
       <workItem from="1647349571924" duration="99000" />
       <workItem from="1647349708842" duration="4712000" />
+      <workItem from="1647356201589" duration="439000" />
     </task>
     <servers />
   </component>
