@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4db73ba7-6a5a-41e6-8a61-3a74c9c9c1f5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Joeur.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Joeur.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abeille.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abeille.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fleur.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fleur.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647334102358</updated>
       <workItem from="1647334114548" duration="1446000" />
-      <workItem from="1647336137449" duration="302000" />
+      <workItem from="1647336137449" duration="621000" />
     </task>
     <servers />
   </component>

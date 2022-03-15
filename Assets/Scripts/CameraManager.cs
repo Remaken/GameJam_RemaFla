@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Abeille : Enemi
+public class CameraManager : MonoBehaviour
 {
-    //todo: bouger vers raycast
+    //todo: Follow player
 }
