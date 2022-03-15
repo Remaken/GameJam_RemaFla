@@ -35,7 +35,7 @@ public class Enemi : MonoBehaviour
         if (_hitPoints<=0)
         {
             _hitPoints = 0;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
