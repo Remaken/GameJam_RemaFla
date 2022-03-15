@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Joeur : MonoBehaviour
+public class Player : MonoBehaviour
 {
    //todo raycast
    private void Update()
