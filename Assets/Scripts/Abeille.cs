@@ -9,14 +9,13 @@ using UnityEngine.Serialization;
 public class Abeille : Enemi
 {
     //todo: bouger vers raycast
-    private float _movementspeed = 2f; 
     private float _detectionDistance= 10f;
     private bool _playerfollow = false;
     public NavMeshAgent abeille;
 
     private void Start()
     {
-        _hitPoints = _hitPoints*2;
+        //_hitPoints = _hitPoints;
     }
     private void Update()
     {
@@ -40,9 +39,9 @@ public class Abeille : Enemi
             _playerfollow = true;
         }
     }
-    
-    
-    
+
+
+
     
     /*Vector3 targetposition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
             this.gameObject.transform.LookAt(targetposition);
