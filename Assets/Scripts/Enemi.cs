@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Enemi : MonoBehaviour
 {
     protected float _hitPoints = 5;
-    private float _detectionDistance=2f;
+    private float _dyingDistance=2f;
     public Transform playerTransform;
     protected Vector3 mouvement;
 
@@ -24,10 +24,9 @@ public class Enemi : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
         mouvement = direction;
-        if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_detectionDistance ))
+        if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_dyingDistance ))
         {
             _hitPoints -= 1 * Time.deltaTime;
-            Debug.Log(_hitPoints);
         }
     }
 
