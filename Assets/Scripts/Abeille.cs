@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 public class Abeille : Enemi
 {
     //todo: bouger vers raycast
-    private float _movementspeed = .2f; 
+    private float _movementspeed = 2f; 
     private float _detectionDistance= 10f;
     private bool _playerfollow = false;
     public NavMeshAgent abeille;
