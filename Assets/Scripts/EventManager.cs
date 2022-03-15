@@ -6,8 +6,8 @@ using UnityEngine.PlayerLoop;
 
 public class EventManager : MonoBehaviour
 {
+    public delegate void Action();
    public static event Action OnRevive;
-   public static event Action OnDeath;
    //todo: events
    //todo: Tableau de réactivation fleur -> avec eau
 
@@ -20,9 +20,4 @@ public class EventManager : MonoBehaviour
        }
    }
 
-
-   public static void EnemyDeath()
-   {
-      OnDeath?.Invoke();
-   }
 }
