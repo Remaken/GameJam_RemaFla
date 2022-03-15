@@ -5,21 +5,38 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   //todo raycast
-   private void Update()
-   {
-      PlayerMouvement();
-   }
+ 
+    //todo raycast
+    private new float speed =0.4f;
+    private void Update()
+    {
+        PlayerMouvement();
+    }
 
 
    
 
-   private void PlayerMouvement()
-   {
-      //todo: mouvement du joueur
-      if (Input.GetKeyDown(KeyCode.Z))
-      {
-         
-      }
-   }
+    private void PlayerMouvement()
+    {
+        //todo: mouvement du joueur
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Translate(new Vector3(0f,0f,.01f*speed));
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(new Vector3(0f,0f,-.01f*speed));
+        }
+      
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(new Vector3(0f,-0.2f*speed,0f));
+        }
+      
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(new Vector3(0,0.2f*speed,0f));
+        }
+    }
 }
