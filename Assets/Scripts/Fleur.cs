@@ -8,6 +8,7 @@ public class Fleur : Enemi
     private void Update()
     {
         PlayerDetector();
+        EnemyDies();
     }
 
 }

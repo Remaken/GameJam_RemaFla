@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
  
     //todo raycast
-    private new float speed =0.4f;
+    private new float speed =4f;
     private void Update()
     {
         PlayerMouvement();

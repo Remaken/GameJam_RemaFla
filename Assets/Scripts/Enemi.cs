@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Enemi : MonoBehaviour
 {
-    private float _hitPoints = 10;
-    public float _detectionDistance=2f;
+    protected float _hitPoints = 5;
+    private float _detectionDistance=2f;
     public Transform playerTransform;
     protected Vector3 mouvement;
 
@@ -16,6 +16,7 @@ public class Enemi : MonoBehaviour
 
     private void Update()
     {
+       
     }
 
     protected void PlayerDetector()
@@ -27,6 +28,15 @@ public class Enemi : MonoBehaviour
         {
             _hitPoints -= 1 * Time.deltaTime;
             Debug.Log(_hitPoints);
+        }
+    }
+
+    protected void EnemyDies()
+    {
+        if (_hitPoints<=0)
+        {
+            _hitPoints = 0;
+            Destroy(gameObject);
         }
     }
 }
