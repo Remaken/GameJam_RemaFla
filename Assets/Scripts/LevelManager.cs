@@ -17,27 +17,28 @@ public class LevelManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (hasFlotte)
+        if (Input.GetKey(KeyCode.Q))
         {
-            if (Input.GetKey(KeyCode.Q))
+            if (!hasFlotte)
             {
                 FlowerRespawn();
-            }    
+            }
         }
     }
 
 
     /*
      Passer d'un niveau à l'autre 
+     Abeille supérieure
      
      */
 
     private void FlowerRespawn()
     {
         for (int index = 0; index < potager1.Length; index++)
-             {
-                  potager1[index].gameObject.SetActive(true);
-             }
+        { 
+            potager1[index].gameObject.SetActive(true); 
+        }
     }
 
 
