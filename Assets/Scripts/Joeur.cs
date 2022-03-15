@@ -5,4 +5,17 @@ using UnityEngine;
 public class Joeur : MonoBehaviour
 {
    //todo raycast
+
+
+
+
+
+
+   private void PlayerMouvement()
+   {
+      if (Input.GetKeyDown(KeyCode.Z))
+      {
+         GetComponent()
+      }
+   }
 }
