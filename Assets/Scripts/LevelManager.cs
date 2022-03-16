@@ -22,7 +22,6 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        Restart();
     }
 
     private void OnEnable()
