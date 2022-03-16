@@ -14,7 +14,7 @@ public class Enemi : MonoBehaviour
     protected bool _isDead=false;
     protected float _hPReset;
     protected bool _canRevive = false;
-
+   
 
     //Todo: raycast detecte joueur
    //estmorte et detecte joueur
@@ -28,17 +28,16 @@ public class Enemi : MonoBehaviour
 
     protected void PlayerDetector()
     {
-        RaycastHit hit;
-        Vector3 direction = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
-        _mouvement = direction;
-        if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_dyingDistance ))
-        {
-            if (_hitPoints>0)
+            RaycastHit hit;
+            Vector3 direction = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
+            _mouvement = direction;
+            if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_dyingDistance ))
             {
-                _hitPoints -= 1 * Time.deltaTime;
+                if (_hitPoints>0)
+                {
+                    _hitPoints -= 1 * Time.deltaTime;
+                }
             }
-            // Debug.Log(_hitPoints);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -63,6 +62,5 @@ public class Enemi : MonoBehaviour
             _hitPoints = _hPReset;
             _isDead=false;
     }
-
 
 }

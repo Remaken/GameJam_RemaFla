@@ -7,14 +7,13 @@ using UnityEngine.Windows.Speech;
 public class Player : MonoBehaviour
 {
     //s'il a l'eau il peut revive
-    public delegate void WaterGather();
-
+    public delegate void WaterGather(); 
     public delegate void PlayerWin();
-
     public static event WaterGather canWater;
-
     public static event PlayerWin canWin;
-    //todo raycast
+    public static event PlayerWin playerDied;
+    
+    
     private float speed =2f;
     private Rigidbody _rb;
     private float _jump=200f;
@@ -23,10 +22,12 @@ public class Player : MonoBehaviour
     private bool _canPowerJump = false;
     private bool _canWater = false;
     public MeshRenderer bucket;
+    private int life = 2;
 
     private void OnEnable()
     {
         Enemi.youCanRevive += EntityDead;
+        Abeille.uneAbeilleMorte += DecesJoueur;
     } 
     private void Start()
     {
@@ -116,9 +117,20 @@ public class Player : MonoBehaviour
             bucket.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         }
     }
+    private void DecesJoueur()
+    {
+        life--;
+        if (life<=0)
+        {
+            Destroy(gameObject);
+            playerDied?.Invoke();
+        }
+    }
+
     private void OnDisable()
     {
         Enemi.youCanRevive -= EntityDead;
+        Abeille.uneAbeilleMorte -= DecesJoueur;
     }
 
 

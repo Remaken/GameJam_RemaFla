@@ -8,6 +8,8 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 public class Abeille : Enemi
 {
+    public delegate void AbeilleMorte();
+    public static event AbeilleMorte uneAbeilleMorte;
     //todo: bouger vers raycast
     private float _detectionDistance= 10f;
     private bool _playerfollow = false;
@@ -15,7 +17,7 @@ public class Abeille : Enemi
 
     private void Start()
     {
-        _hitPoints = _hitPoints*2;
+        _hitPoints = _hitPoints/2;
     }
     private void Update()
     {
@@ -29,18 +31,22 @@ public class Abeille : Enemi
         if (_isDead==true)
         {
             Destroy(this.gameObject);
+            uneAbeilleMorte?.Invoke();
         }
     }
 
 
     private void MouvementAbeille(Vector3 direction)
     {
-
-        RaycastHit hit;
-        Vector3 detect = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
-        if (Physics.Raycast(this.gameObject.transform.position, direction, out hit, _detectionDistance))
+        ////////////////////////////////////////////////////////////////////////////////////////
+        if (playerTransform!=null)
         {
-            _playerfollow = true;
+            RaycastHit hit;
+            Vector3 detect = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
+            if (Physics.Raycast(this.gameObject.transform.position, direction, out hit, _detectionDistance))
+            {
+                _playerfollow = true;
+            }
         }
     }
 
