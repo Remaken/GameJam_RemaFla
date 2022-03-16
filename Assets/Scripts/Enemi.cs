@@ -13,6 +13,7 @@ public class Enemi : MonoBehaviour
     protected Vector3 _mouvement;
     protected bool _isDead=false;
     protected float _hPReset;
+    protected bool _canRevive = false;
 
 
     //Todo: raycast detecte joueur
@@ -36,13 +37,15 @@ public class Enemi : MonoBehaviour
             {
                 _hitPoints -= 1 * Time.deltaTime;
             }
-
-            else if (_isDead==true)
-            {
-                print("je susi mort");
-                youCanRevive?.Invoke();
-            }
             // Debug.Log(_hitPoints);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player")&&(_canRevive==true))
+        {
+            youCanRevive?.Invoke();
         }
     }
 

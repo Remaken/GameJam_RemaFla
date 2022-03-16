@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 
 public class Fleur : Enemi
 {
-    private bool _canRevive = false;
+    
 
     private void OnEnable()
     {

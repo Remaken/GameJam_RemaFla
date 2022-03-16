@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private bool _canjump = false;
     private bool _canPowerJump = false;
     private bool _canWater = false;
+    public MeshRenderer bucket;
 
     private void OnEnable()
     {
@@ -86,6 +87,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Fontaine"))
         {
             _canWater = true;
+            bucket.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
         }
 
         if (other.gameObject.CompareTag("Jumper"))
@@ -99,9 +101,9 @@ public class Player : MonoBehaviour
     {
         if (_canWater==true)
         {
-            print("water");
             canWater?.Invoke();
             _canWater = false;
+            bucket.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         }
     }
     private void OnDisable()
