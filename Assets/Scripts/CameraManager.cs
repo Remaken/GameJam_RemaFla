@@ -1,8 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    //todo: Follow player
+    public GameObject player;
+    public GameObject camera;
+    private Vector3 offset;
+
+    private void Start()
+    {
+        offset = camera.transform.position - player.transform.position;
+        
+    }
+
+    private void FixedUpdate()
+    {
+        camera.transform.position = player.transform.position + offset;
+    }
 }

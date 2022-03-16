@@ -36,6 +36,7 @@ public class Enemi : MonoBehaviour
             if (_hitPoints>0)
             {
                 _hitPoints -= 1 * Time.deltaTime;
+                
             }
             // Debug.Log(_hitPoints);
         }

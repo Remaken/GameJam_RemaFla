@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {   
@@ -15,6 +16,14 @@ public class LevelManager : MonoBehaviour
     public bool playercanwin;
     private int index;
     private static List<Renderer> potager;
+    public GameObject canvaSystem;
+    public Button exit;
+    public Button retry;
+
+    private void Start()
+    {
+        Restart();
+    }
 
     private void OnEnable()
     {
@@ -65,7 +74,7 @@ public class LevelManager : MonoBehaviour
 
         if ( fleursouvertes == potager.Count)
         {
-            //Time.timeScale = 0;
+            UImanaging();
         }
         
     }
@@ -75,5 +84,16 @@ public class LevelManager : MonoBehaviour
         Player.canWin -= FlowerCheck;
     }
 
+    private void UImanaging()
+    {
+        canvaSystem.gameObject.SetActive(true);
+       
+        
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 
 }
