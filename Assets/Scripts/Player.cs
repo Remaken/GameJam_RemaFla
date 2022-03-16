@@ -120,14 +120,20 @@ public class Player : MonoBehaviour
     }
 
     private void FlowerCheck()
-    {
+    {   
+        int fleursouvertes = 0;
         for (int index = 0; index < potager.Count; index++)
         {
             
             if ( potager[index].material.IsKeywordEnabled("_EMISSION"))
             {
-                Time.timeScale = 0;
+                fleursouvertes++;
             }
+        }
+
+        if ( fleursouvertes == potager.Count)
+        {
+            
         }
         
     }
