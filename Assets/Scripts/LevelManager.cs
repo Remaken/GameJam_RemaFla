@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     public GameObject[] potager1;
     private bool onDeath;
     private bool _hasFlotte=true;
+    public bool playercanwin;
+    private int index;
     
     
 
@@ -23,6 +25,7 @@ public class LevelManager : MonoBehaviour
                 FlowerRespawn();
             }
         }
+
     }
 
 
@@ -39,6 +42,8 @@ public class LevelManager : MonoBehaviour
             potager1[index].gameObject.SetActive(true); 
         }
     }
+
+  
 
 
 

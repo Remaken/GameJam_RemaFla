@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class Player : MonoBehaviour
     private bool _canjump = false;
     private bool _canPowerJump = false;
     private bool _canWater = false;
+    private bool _canWin = false;
     public MeshRenderer bucket;
+    public static List<Renderer> potager;
 
     private void OnEnable()
     {
@@ -95,6 +98,11 @@ public class Player : MonoBehaviour
             _canjump = false;
             _canPowerJump = true;
         }
+
+        if (other.gameObject.CompareTag("finish"))
+        {
+            FlowerCheck();
+        }
     }
 
     private void EntityDead()
@@ -109,5 +117,18 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         Enemi.youCanRevive -= EntityDead;
+    }
+
+    private void FlowerCheck()
+    {
+        for (int index = 0; index < potager.Count; index++)
+        {
+            
+            if ( potager[index].material.IsKeywordEnabled("_EMISSION"))
+            {
+                Time.timeScale = 0;
+            }
+        }
+        
     }
 }
