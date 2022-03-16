@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4db73ba7-6a5a-41e6-8a61-3a74c9c9c1f5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJam_RemaFla/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJam_RemaFla/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fleurs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fleurs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Abeille.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Abeille.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="4db73ba7-6a5a-41e6-8a61-3a74c9c9c1f5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +81,6 @@
       <workItem from="1647436221138" duration="603000" />
       <workItem from="1647437303076" duration="1417000" />
       <workItem from="1647438876136" duration="3587000" />
-      <workItem from="1647443363586" duration="1748000" />
     </task>
     <servers />
   </component>

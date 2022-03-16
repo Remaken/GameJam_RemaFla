@@ -23,7 +23,7 @@ public class Abeille : Enemi
     {
         PlayerDetector();
         MouvementAbeille(_mouvement);
-        if ((_playerfollow)&&(playerTransform!=null))
+        if (_playerfollow)
         {
             abeille.SetDestination(playerTransform.position);
         }
@@ -38,6 +38,7 @@ public class Abeille : Enemi
 
     private void MouvementAbeille(Vector3 direction)
     {
+        ////////////////////////////////////////////////////////////////////////////////////////
         if (playerTransform!=null)
         {
             RaycastHit hit;

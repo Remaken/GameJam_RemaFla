@@ -28,21 +28,18 @@ public class Enemi : MonoBehaviour
 
     protected void PlayerDetector()
     {
-        if (playerTransform!=null)
+        RaycastHit hit;
+        Vector3 direction = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
+        _mouvement = direction;
+        if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_dyingDistance ))
         {
-            RaycastHit hit;
-            Vector3 direction = Vector3.Normalize(playerTransform.position - this.gameObject.transform.position);
-            _mouvement = direction;
-            if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_dyingDistance ))
+            if (_hitPoints>0)
             {
-                if (_hitPoints>0)
-                {
-                    _hitPoints -= 1 * Time.deltaTime;
+                _hitPoints -= 1 * Time.deltaTime;
                 
-                }
             }
+            // Debug.Log(_hitPoints);
         }
-      
     }
 
     private void OnTriggerEnter(Collider other)
