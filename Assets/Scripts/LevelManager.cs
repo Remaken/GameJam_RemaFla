@@ -10,21 +10,55 @@ public class LevelManager : MonoBehaviour
     //todo: camera changer
     //todo: collecte eau
 
+    public GameObject[] potager1;
     private bool onDeath;
+    private bool _hasFlotte=true;
     public bool playercanwin;
+    private int index;
     private static List<Renderer> potager;
-    public Button restart;
+    public GameObject canvaSystem;
+    public Button exit;
+    public Button retry;
+
+    private void Start()
+    {
+        Restart();
+    }
 
     private void OnEnable()
     {
         Player.canWin += FlowerCheck;
-        Player.playerDied += ButtonActivate;
     }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            if (!_hasFlotte)
+            {
+                FlowerRespawn();
+            }
+        }
+
+    }
+
+
     /*
      Passer d'un niveau à l'autre 
      Abeille supérieure
      
      */
+
+    private void FlowerRespawn()
+    {
+        for (int index = 0; index < potager1.Length; index++)
+        { 
+            potager1[index].gameObject.SetActive(true); 
+        }
+    }
+
+  
+
 
     private void FlowerCheck()
     {   
@@ -40,29 +74,26 @@ public class LevelManager : MonoBehaviour
 
         if ( fleursouvertes == potager.Count)
         {
-            playercanwin = true;
-            Time.timeScale = 0;
+            UImanaging();
         }
-        
-    }
-
-    private void ButtonActivate()
-    {
-        restart.gameObject.SetActive(true);
-    }  
-    public void Restart()
-    {
-        SceneManager.LoadScene("SampleScene");
         
     }
 
     private void OnDisable()
     {
         Player.canWin -= FlowerCheck;
-        Player.playerDied -= ButtonActivate;
     }
 
-   
+    private void UImanaging()
+    {
+        canvaSystem.gameObject.SetActive(true);
+       
+        
+    }
 
+    private void Restart()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 
 }
