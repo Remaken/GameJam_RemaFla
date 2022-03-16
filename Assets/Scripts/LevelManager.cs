@@ -86,13 +86,12 @@ public class LevelManager : MonoBehaviour
     private void UImanaging()
     {
         canvaSystem.gameObject.SetActive(true);
-       
-        
     }
 
     private void Restart()
     {
         SceneManager.LoadScene("SampleScene");
+        
     }
 
 }

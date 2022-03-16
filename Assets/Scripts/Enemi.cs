@@ -35,7 +35,7 @@ public class Enemi : MonoBehaviour
             _mouvement = direction;
             if ( Physics.Raycast(this.gameObject.transform.position,direction, out hit,_dyingDistance ))
             {
-                if (_hitPoints>0)
+                if ( hit.collider.gameObject.GetComponent<Player>() != null && _hitPoints > 0)
                 {
                     _hitPoints -= 1 * Time.deltaTime;
                 
