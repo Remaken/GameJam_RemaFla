@@ -10,8 +10,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject[] potager1;
     private bool onDeath;
-    private int index;
-    private bool hasFlotte;
+    private bool _hasFlotte=true;
     
     
 
@@ -19,7 +18,7 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            if (!hasFlotte)
+            if (!_hasFlotte)
             {
                 FlowerRespawn();
             }

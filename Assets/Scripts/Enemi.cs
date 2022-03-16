@@ -16,10 +16,6 @@ public class Enemi : MonoBehaviour
 
 
     //Todo: raycast detecte joueur
-    private void OnEnable()
-    {
-        EventManager.OnRevive += Revive;
-    }
 
     private void Start()
     {
@@ -50,18 +46,11 @@ public class Enemi : MonoBehaviour
         }
     }
   
-    private void Revive()
+    protected void Revive()
     {
-        if (_isDead)
-        {
             _hitPoints = _hPReset;
             _isDead=false;
-        }
-
     }
 
-    private void OnDisable()
-    {
-        EventManager.OnRevive -= Revive;
-    }
+
 }

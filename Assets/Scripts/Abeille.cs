@@ -15,7 +15,7 @@ public class Abeille : Enemi
 
     private void Start()
     {
-        //_hitPoints = _hitPoints;
+        _hitPoints = _hitPoints*2;
     }
     private void Update()
     {
