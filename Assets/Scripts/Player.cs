@@ -9,7 +9,11 @@ public class Player : MonoBehaviour
     //s'il a l'eau il peut revive
     public delegate void WaterGather();
 
- public static event WaterGather canWater;
+    public delegate void PlayerWin();
+
+    public static event WaterGather canWater;
+
+    public static event PlayerWin canWin;
     //todo raycast
     private float speed =2f;
     private Rigidbody _rb;
@@ -18,9 +22,7 @@ public class Player : MonoBehaviour
     private bool _canjump = false;
     private bool _canPowerJump = false;
     private bool _canWater = false;
-    private bool _canWin = false;
     public MeshRenderer bucket;
-    public static List<Renderer> potager;
 
     private void OnEnable()
     {
@@ -99,9 +101,9 @@ public class Player : MonoBehaviour
             _canPowerJump = true;
         }
 
-        if (other.gameObject.CompareTag("finish"))
+        if (other.gameObject.CompareTag("Finish"))
         {
-            FlowerCheck();
+            canWin?.Invoke();
         }
     }
 
@@ -119,22 +121,5 @@ public class Player : MonoBehaviour
         Enemi.youCanRevive -= EntityDead;
     }
 
-    private void FlowerCheck()
-    {   
-        int fleursouvertes = 0;
-        for (int index = 0; index < potager.Count; index++)
-        {
-            
-            if ( potager[index].material.IsKeywordEnabled("_EMISSION"))
-            {
-                fleursouvertes++;
-            }
-        }
 
-        if ( fleursouvertes == potager.Count)
-        {
-            
-        }
-        
-    }
 }
