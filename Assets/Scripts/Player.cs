@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
- 
+    //s'il a l'eau il peut revive
+    public delegate void WaterGather();
+
+ public static event WaterGather canWater;
     //todo raycast
     private float speed =2f;
     private Rigidbody _rb;
@@ -15,7 +18,10 @@ public class Player : MonoBehaviour
     private bool _canPowerJump = false;
     private bool _canWater = false;
 
-
+    private void OnEnable()
+    {
+        Enemi.youCanRevive += EntityDead;
+    } 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -26,9 +32,6 @@ public class Player : MonoBehaviour
         PlayerMouvement();
         Jump();
     }
-
-
-   
 
     private void PlayerMouvement()
     {
@@ -90,5 +93,19 @@ public class Player : MonoBehaviour
             _canjump = false;
             _canPowerJump = true;
         }
+    }
+
+    private void EntityDead()
+    {
+        if (_canWater==true)
+        {
+            print("water");
+            canWater?.Invoke();
+            _canWater = false;
+        }
+    }
+    private void OnDisable()
+    {
+        Enemi.youCanRevive -= EntityDead;
     }
 }

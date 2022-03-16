@@ -16,6 +16,9 @@ public class Enemi : MonoBehaviour
 
 
     //Todo: raycast detecte joueur
+   //estmorte et detecte joueur
+   public delegate void ImDead();
+   public static event ImDead youCanRevive ;
 
     private void Start()
     {
@@ -32,6 +35,12 @@ public class Enemi : MonoBehaviour
             if (_hitPoints>0)
             {
                 _hitPoints -= 1 * Time.deltaTime;
+            }
+
+            else if (_isDead==true)
+            {
+                print("je susi mort");
+                youCanRevive?.Invoke();
             }
             // Debug.Log(_hitPoints);
         }

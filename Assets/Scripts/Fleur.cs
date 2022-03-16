@@ -7,6 +7,12 @@ using UnityEngine.PlayerLoop;
 public class Fleur : Enemi
 {
     private bool _canRevive = false;
+
+    private void OnEnable()
+    {
+        Player.canWater += FlowerRevive;
+    } 
+
     private void Update()
     {
         PlayerDetector();
@@ -19,18 +25,22 @@ public class Fleur : Enemi
            _canRevive = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+    }
+
+    private void FlowerRevive()
+    {
+        if (_canRevive==true)
         {
-            if (_canRevive==true)
-            {
-                Revive();
-                gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
-                gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                _canRevive = false;
-            }
-            
+            Revive();
+            gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+            gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            _canRevive = false;
         }
-        
+            
+    }
+    private void OnDisable()
+    {
+        Player.canWater += FlowerRevive;
     }
 
 }
