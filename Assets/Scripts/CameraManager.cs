@@ -12,11 +12,13 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         offset = camera.transform.position - player.transform.position;
-        
     }
 
     private void FixedUpdate()
     {
-        camera.transform.position = player.transform.position + offset;
+        if (player!=null)
+        {
+            camera.transform.position = player.transform.position + offset;
+        }
     }
 }

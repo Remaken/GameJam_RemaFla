@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 6878304770646805210, guid: d0ee2d98cb3a62c40843b9ea0217b7e4, type: 3}
+  fleur: {fileID: 6748398584511485079}
 --- !u!54 &6748398584511485078
 Rigidbody:
   m_ObjectHideFlags: 0

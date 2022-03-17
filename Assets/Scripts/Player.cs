@@ -14,10 +14,10 @@ public class Player : MonoBehaviour
     public static event PlayerWin playerDied;
     
     
-    private float speed =2f;
+    private float speed =8f;
     private Rigidbody _rb;
-    private float _jump=200f;
-    private float _powerJump=5000f;
+    private float _jump=50f;
+    private float _powerJump=500f;
     private bool _canjump = false;
     private bool _canPowerJump = false;
     private bool _canWater = false;
@@ -34,9 +34,13 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         PlayerMouvement();
+    }
+
+    private void Update()
+    {
         Jump();
     }
 
@@ -45,22 +49,22 @@ public class Player : MonoBehaviour
         //todo: mouvement du joueur
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(new Vector3(0f,0f,.01f*speed));
+            transform.Translate(new Vector3(0f,0f,speed*Time.fixedDeltaTime));
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(new Vector3(0f,0f,-.01f*speed));
+            transform.Translate(new Vector3(0f,0f,-speed*Time.fixedDeltaTime));
         }
       
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(new Vector3(0f,-0.2f*speed,0f));
+            transform.Rotate(new Vector3(0f,-10*speed*Time.fixedDeltaTime,0f));
         }
       
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(new Vector3(0,0.2f*speed,0f));
+            transform.Rotate(new Vector3(0,10*speed*Time.fixedDeltaTime,0f));
         }
     }
 

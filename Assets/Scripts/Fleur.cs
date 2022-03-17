@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 
 public class Fleur : Enemi
 {
-    
+    public GameObject fleur;
+    private void Start()
+    {
+    }
 
     private void OnEnable()
     {
@@ -19,8 +24,8 @@ public class Fleur : Enemi
         EnemyDies();
         if (_isDead==true)
         {
-           gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.red);
-           gameObject.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+           fleur.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.red);
+           fleur.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
            _isDead = false;
            _canRevive = true;
         }
@@ -31,9 +36,10 @@ public class Fleur : Enemi
     {
         if (_canRevive==true)
         {
+            print("fe");
             Revive();
-            gameObject.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
-            gameObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            fleur.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+            fleur.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             _canRevive = false;
         }
             

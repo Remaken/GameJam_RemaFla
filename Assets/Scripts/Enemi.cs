@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Enemi : MonoBehaviour
 {
-    protected float _hitPoints = 5;
+    protected float _hitPoints = 1;
     private float _dyingDistance=2f;
     public Transform playerTransform;
     protected Vector3 _mouvement;
