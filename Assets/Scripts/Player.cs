@@ -7,17 +7,16 @@ using UnityEngine.Windows.Speech;
 public class Player : MonoBehaviour
 {
     //s'il a l'eau il peut revive
-    public delegate void WaterGather(); 
     public delegate void PlayerWin();
-    public static event WaterGather canWater;
     public static event PlayerWin canWin;
     public static event PlayerWin playerDied;
+    public static event PlayerWin canWater;
     
     
-    private float speed =8f;
+    [SerializeField] private float speed =8f;
+    [SerializeField] private float _jump=5f;
+    [SerializeField] private float _powerJump=12f;
     private Rigidbody _rb;
-    private float _jump=50f;
-    private float _powerJump=500f;
     private bool _canjump = false;
     private bool _canPowerJump = false;
     private bool _canWater = false;
@@ -70,16 +69,16 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if ((_canjump==true)&&(Input.GetKeyDown(KeyCode.Space)))
-        { 
-            _canjump = false;
-            _rb.AddForce(Vector3.up*_jump);
-            _canPowerJump = false;
-        }
         if ((_canPowerJump==true)&&(Input.GetKeyDown(KeyCode.Space)))
         {
             _canPowerJump = false;
-            _rb.AddForce(Vector3.up*_powerJump);   
+            _rb.AddForce(Vector3.up * _powerJump, ForceMode.Impulse);
+        }
+        if ((_canjump==true)&&(Input.GetKeyDown(KeyCode.Space)))
+        { 
+            _canjump = false;
+            _canPowerJump = false;
+            _rb.AddForce(Vector3.up*_jump, ForceMode.Impulse);
         }
     }
     
@@ -87,8 +86,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            //_canPowerJump = true;
             _canjump = true;
-            _canPowerJump = true;
         }
     }
 

@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 6748398584511485083}
   - component: {fileID: 6748398584511485080}
   - component: {fileID: 6748398584511485081}
-  - component: {fileID: 6748398584511485078}
   m_Layer: 0
   m_Name: Fleurs
   m_TagString: Untagged
@@ -186,12 +185,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6748398584511485079}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.5973716
+  m_Height: 2.1470823
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.005487442, y: 0.073541164, z: 0.013616443}
 --- !u!114 &6748398584511485081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,19 +205,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 6878304770646805210, guid: d0ee2d98cb3a62c40843b9ea0217b7e4, type: 3}
   fleur: {fileID: 6748398584511485079}
---- !u!54 &6748398584511485078
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6748398584511485079}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0

@@ -9,9 +9,6 @@ using UnityEngine.Serialization;
 public class Fleur : Enemi
 {
     public GameObject fleur;
-    private void Start()
-    {
-    }
 
     private void OnEnable()
     {
@@ -36,7 +33,6 @@ public class Fleur : Enemi
     {
         if (_canRevive==true)
         {
-            print("fe");
             Revive();
             fleur.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
             fleur.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");

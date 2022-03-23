@@ -604,4 +604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952919baacbedc44a8475927379b3038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  _jump: 4
+  _powerJump: 12
+  fleurManager: {fileID: 6748398584511485081, guid: b6c89e47a3257db41894cd546298aba8, type: 3}
   bucket: {fileID: 8141445014773368762}
